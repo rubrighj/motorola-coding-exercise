@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NASA Rover Images</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link href="./lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./lib/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/site.min.css?v=1.0" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-2 top-nav-bar-background justify-content-center">
+            <a href="#" class="navbar-left"><img src="./img/logo.png" class="navbar-logo" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse w-90" id="collapsingNavbar3">
+            </div>
+        </nav>
+    </header>
+    <div id="main-container" class="bottom-margin">
+        <main role="main" class="pb-3">
+            <div style="display:flex; flex-flow: row wrap;">
+                <div class="card text-white bg-dark body-search-window" style="flex-grow: 1;">
+                    <div class="card-body">
+                        <h5 class="card-title">Search &amp; Download NASA Rover Images</h5>
+                        <p class="card-text">
+                        </p>
+                        <div style="display:flex; flex-flow: column nowrap;">
+                            <div style="display:flex; flex-flow: row wrap;">
+                                <input type="text" class="form-control col-7" id="search-date" placeholder="Search Images by Date (YYYY-MM-DD)">
+                                <button class="btn btn-success ml-3" id="search-button">Search</button>
+                            </div>
+                            <div style="display:flex; flex-flow: row wrap;" class="mt-2">
+                                <div class="form-group">
+                                    <label for="select-camera">Camera Selector:</label>
+                                    <select class="form-control" id="select-camera">
+                                        <option>all</option>
+                                        <option>FHAZ</option>
+                                        <option>RHAZ</option>
+                                        <option>MAST</option>
+                                        <option>CHEMCAM</option>
+                                        <option>MAHLI</option>
+                                        <option>MARDI</option>
+                                        <option>NAVCAM</option>
+                                        <option>PANCAM</option>
+                                        <option>MINITES</option>
+                                    </select>
+                                    <label for="select-page" class="mt-2">Page Number:</label>
+                                    <input type="number" class="form-control col-4" id="select-page" value="1" />
+                                </div>
+                            </div>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="images-section-container" class="images-section-container">
+                <div class="card-deck ml-3 mr-3 mt-2" id="images-collection">
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted bottom-nav-bar-background">
+    </footer>
+
+    <script src="./lib/jquery/dist/jquery.min.js"></script>
+    <script src="./lib/bootstrap/dist./js/bootstrap.bundle.min.js"></script>
+    <script src="./lib/easing/easing.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="./lib/mobile-nav/mobile-nav.js"></script>
+    <script src="./lib/counterup/counterup.min.js"></script>
+    <script src="./js/Globals.js"></script>
+    <script src="./js/Nasa.js"></script>
+    <script>
+        var globals = new Globals();
+
+        var nasa = new Nasa(globals);
+    </script>
+
+</body>
+
+</html>
